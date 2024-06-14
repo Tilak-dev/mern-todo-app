@@ -1,23 +1,41 @@
-import React from 'react'
-import TaskbarItem from './TaskbarItem'
-import taskData from '../data'
+import React, { useEffect, useState } from "react";
+import TaskbarItem from "./TaskbarItem";
+import taskData from "../data";
+import axios from "axios";
 
 function TaskBar() {
+  const [getData, setGetData] = useState([]);
+  const getFetchedData = async () => {
+    try {
+      const res =await axios.get("http://localhost:5000/api/get")
+      console.log(res.data)
+      if (res.data) {
+        setGetData(res.data);
+      } else {
+        console.log("Invalid data structure.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getFetchedData();
+  }, []);
   return (
-    <div className='flex flex-col gap-3'>
+    <div className="flex flex-col gap-3">
       <div className=" w-full flex justify-end">
-        <div>Welcome back <span>ash</span></div>
+        <div>
+          Welcome back <span>ash</span>
+        </div>
       </div>
       <div className=" w-full h-[320px] overflow-scroll overflow-x-hidden ">
-        {
-          taskData.map((task)=>{
-            return <TaskbarItem key={task.id} task={task.task} />
-          })
-        }
-        
+        {getData.map((todoItem) => {
+          return <TaskbarItem key={todoItem._id} todo={todoItem.todo} />;
+        })}
       </div>
     </div>
-  )
+  );
 }
 
-export default TaskBar
+export default TaskBar;

@@ -2,14 +2,14 @@ import React from "react";
 import { MdOutlineTaskAlt } from "react-icons/md";
 
 
-function TaskbarItem({task}) {
+function TaskbarItem({todo}) {
   return (
     <div className="border-[0.6px] rounded-lg p-2 border-gray-500 mt-2 flex flex-row justify-between">
       <div className=" text-xl w-[15%]  font-semibold flex items-center flex-row gap-2">
         <span>
           <MdOutlineTaskAlt />
         </span>
-        <span className="">{task}</span>
+        <span className="">{todo}</span>
       </div>
       <div className=" text-xl  font-semibold flex items-center flex-row gap-2">
         <span>------progress-----</span>
