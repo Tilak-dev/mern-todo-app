@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import TaskbarItem from "./TaskbarItem";
-import taskData from "../data";
 import axios from "axios";
 
 function TaskBar() {
