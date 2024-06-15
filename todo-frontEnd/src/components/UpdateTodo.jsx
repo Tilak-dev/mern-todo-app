@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
-function AddTodo() {
+function UpdateTodo() {
   const [data, setData] = useState({
     todo: "",
   });
@@ -55,4 +54,4 @@ function AddTodo() {
   );
 }
 
-export default AddTodo;
+export default UpdateTodo;

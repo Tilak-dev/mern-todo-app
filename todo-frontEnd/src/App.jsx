@@ -10,7 +10,7 @@ function App() {
     <>
     {/* <Login /> */}
     {/* <Register /> */}
-    {/* <Dashboard /> */}
+    <Dashboard />
     <AddTodo />
     </>
   )

@@ -30,7 +30,7 @@ function TaskBar() {
       </div>
       <div className=" w-full h-[320px] overflow-scroll overflow-x-hidden ">
         {getData.map((todoItem) => {
-          return <TaskbarItem key={todoItem._id} todo={todoItem.todo} />;
+          return <TaskbarItem key={todoItem._id} paramId={todoItem._id} todo={todoItem.todo} getFetchedData={getFetchedData()}/>;
         })}
       </div>
     </div>
