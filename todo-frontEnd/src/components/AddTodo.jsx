@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
 
 function AddTodo() {
   const [data, setData] = useState({
@@ -29,7 +31,12 @@ function AddTodo() {
   };
   return (
     <div className=" w-screen h-screen flex justify-center items-center bg-blue-200">
-      <div className="w-8/12 h-3/5 border-gray-500 rounded-md border-[.5px] pt-8 pb-2 pr-4 pl-4 bg-gray-100">
+      <div className="w-8/12 h-3/5 border-gray-500 rounded-md border-[.5px] pt-8 pb-2 pr-4 pl-4 bg-gray-100 relative">
+        <div className=" absolute text-2xl z-10 right-4 top-3">
+          <Link to="/">
+            <IoClose />
+          </Link>
+        </div>
         <form onSubmit={handleOnSubmit} className=" flex flex-col gap-6">
           <div className="flex justify-center">
             <input
